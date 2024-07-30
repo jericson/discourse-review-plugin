@@ -1,1 +1,3 @@
 en:
+  site_settings:
+    review_form_enabled: "Enable review form"

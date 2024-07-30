@@ -1,21 +1,34 @@
+# coding: utf-8
 # frozen_string_literal: true
 
-# name: discourse-plugin-name
+# name: discourse-review
 # about: TODO
 # meta_topic_id: TODO
 # version: 0.0.1
-# authors: Discourse
+# authors: Jon Ericson
 # url: TODO
 # required_version: 2.7.0
 
-enabled_site_setting :plugin_name_enabled
+enabled_site_setting :review_form_enabled
 
-module ::MyPluginModule
-  PLUGIN_NAME = "discourse-plugin-name"
+module ::Review
+  PLUGIN_NAME = "discourse-review-plugin"
 end
 
-require_relative "lib/my_plugin_module/engine"
+require_relative "lib/review/engine"
+require_relative File.expand_path("../lib/review/review_store.rb", __FILE__)
+
 
 after_initialize do
-  # Code which should run after Rails has finished booting
+  require_relative File.expand_path("../app/controllers/review_controller.rb", __FILE__)
+  require_relative File.expand_path("../app/controllers/reviews_controller.rb", __FILE__)
+
+  Discourse::Application.routes.append do
+    # Map the path `/review` to `ReviewController`’s `index` method
+    get "/review" => "review#index"
+
+    get "/reviews" => "reviews#index"
+    put "/reviews/:review_id" => "reviews#create"
+    delete "/reviews/:review_id" => "reviews#destroy"
+  end
 end

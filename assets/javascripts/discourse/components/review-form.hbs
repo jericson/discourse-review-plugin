@@ -1,0 +1,28 @@
+<form
+  {{action "createReview" name email message on="submit"}}
+  class="review"
+  id="review-form"
+>
+  <label>
+    {{i18n "review.create_review.text_name_label"}}
+    {{input required="required" class="form-control" type="text" value=name}}
+  </label>
+
+  <label>
+    {{i18n "review.create_review.text_email_label"}}
+    {{input required=true type="text" value=email}}
+  </label>
+
+  <label>
+    {{i18n "review.create_review.text_message_label"}}
+    {{textarea value=message}}
+  </label>
+
+  {{#if sent}}
+    <p class="thanks">Thanks! We'll review you soon.</p>
+  {{else}}
+    <button type="submit" class="btn btn-primary">
+      {{i18n "review.create_review.submit_label"}}
+    </button>
+  {{/if}}
+</form>

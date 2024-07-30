@@ -1,4 +1,7 @@
-TODO_plugin_name:
-  plugin_name_enabled:
+discourse-review-plugin:
+  review_form_enabled:
     default: false
+    client: true
+  review_form_email:
+    default: "review@example.com"
     client: true
