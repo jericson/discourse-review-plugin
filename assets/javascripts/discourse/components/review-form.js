@@ -16,7 +16,6 @@ export default Component.extend({
     });
   },
 
-
   actions: {
     createReview(name, email, message) {
       const reviewRecord = this.store.createRecord("review", {
@@ -26,15 +25,11 @@ export default Component.extend({
         message,
       });
 
-
-      console.log(reviewRecord);
-
       reviewRecord.save().then((result) => {
         this.reviews.pushObject(result.target);
       });
 
       this.set("sent", "true");
     },
-
   },
 });

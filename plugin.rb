@@ -18,7 +18,6 @@ end
 require_relative "lib/review/engine"
 require_relative File.expand_path("../lib/review/review_store.rb", __FILE__)
 
-
 after_initialize do
   require_relative File.expand_path("../app/controllers/review_controller.rb", __FILE__)
   require_relative File.expand_path("../app/controllers/reviews_controller.rb", __FILE__)

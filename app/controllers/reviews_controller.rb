@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
     ReviewStore.add_review(review_id, review)
 
     @date = Time.now.strftime("%a, %-d %b %Y %H:%M:%S  %z'")
-   @time = Time.now.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d/%Y %H:%M %p")
+    @time = Time.now.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d/%Y %H:%M %p")
 
     @mail =
       "

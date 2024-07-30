@@ -6,8 +6,8 @@ module ::Review
     requires_plugin "discourse-review-plugin"
 
     def index
-     Rails.logger.info "🚂 Called the `ReviewController#index` method."
-     render("Review")
+      Rails.logger.info "🚂 Called the `ReviewController#index` method."
+      render("Review")
     end
   end
 end
