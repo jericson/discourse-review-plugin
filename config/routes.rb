@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Review::Engine.routes.draw do
-  get "/examples" => "examples#index"
+  #get "/examples" => "examples#index"
   # define routes here
 end
 
