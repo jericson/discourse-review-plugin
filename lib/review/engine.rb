@@ -2,8 +2,8 @@
 
 module ::Review
   class Engine < ::Rails::Engine
-    engine_name discourse-review-plugin
-    isolate_namespace  Review
+    engine_name "discourse-review-plugin"
+    isolate_namespace Review
     config.autoload_paths << File.join(config.root, "lib")
     scheduled_job_dir = "#{config.root}/app/jobs/scheduled"
     config.to_prepare do
