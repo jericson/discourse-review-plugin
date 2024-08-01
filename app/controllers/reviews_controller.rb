@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class ReviewsController < ApplicationController
+class ReviewController < ApplicationController
   requires_plugin "discourse-review-plugin"
 
   #  requires_login
