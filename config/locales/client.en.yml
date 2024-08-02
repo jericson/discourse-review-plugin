@@ -3,7 +3,7 @@ en:
     admin:
       site_settings:
         categories:
-          discourse_review_plugin: "Review form"
+          discourse-review-plugin: "Review form"
   js:
     review:
       create_review:
