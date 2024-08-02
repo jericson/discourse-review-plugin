@@ -9,6 +9,6 @@ en:
       create_review:
         text_name_label: 'Name'
         text_email_label: 'Email'
-        text_message_label: 'Message'
+        text_review_label: 'Review'
 
         submit_label: "Send"

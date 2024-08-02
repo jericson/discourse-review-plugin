@@ -1,7 +1,12 @@
 {{#if @outletArgs.category.name}}
   {{#if (includes @outletArgs.category.name "Reviews")}}
 
+    {{siteSettings.review_form_intro}}
+    <br/>
+
     <ReviewForm />
+
+    <hr/>
 
   {{/if}}
 {{/if}}

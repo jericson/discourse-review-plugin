@@ -1,5 +1,5 @@
 <form
-  {{action "createReview" name email message on="submit"}}
+  {{action "createReview" name email review_text on="submit"}}
   class="review"
   id="review-form"
 >
@@ -14,12 +14,12 @@
   </label>
 
   <label>
-    {{i18n "review.create_review.text_message_label"}}
-    {{textarea value=message}}
+    {{i18n "review.create_review.text_review_label"}}
+    {{textarea value=review_text}}
   </label>
 
   {{#if sent}}
-    <p class="thanks">Thanks! We'll review you soon.</p>
+    <p class="thanks">Thanks for the review!</p>
   {{else}}
     <button type="submit" class="btn btn-primary">
       {{i18n "review.create_review.submit_label"}}

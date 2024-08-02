@@ -5,3 +5,6 @@ discourse-review-plugin:
   review_form_email:
     default: "review@example.com"
     client: true
+  review_form_intro:
+    default: "Please leave a review!"
+    client: true

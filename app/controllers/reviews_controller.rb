@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
                      only: [:create]
 
   def create
-    Rails.logger.info "Called ReviewsController#update"
+    Rails.logger.info "Called ReviewsController#create"
 
     review_id = params[:review_id]
     review_id = Digest::MD5.hexdigest(Time.now.to_i.to_s + params[:review][:email])
@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
       "id" => review_id,
       "name" => params[:review][:name],
       "email" => params[:review][:email],
-      "message" => params[:review][:message],
+      "review_text" => params[:review][:review_text],
     }
 
     ReviewStore.add_review(review_id, review)
@@ -33,15 +33,10 @@ class ReviewsController < ApplicationController
 Date: #{@date}
 From: #{review["email"] || "unknown@example.com"}
 To: #{SiteSetting.review_form_email}
-Subject: Review from #{review["name"]} - #{@time}
+Subject: Review from #{review["name"] || 'Anonymous reviewer'}
 
 
-Name:  #{review["name"]}
-Email: #{review["email"]}
-
-Message:
-
-#{review["message"]}"
+#{review["review_text"]}"
 
     Mail.new(@mail).message_id.presence
 

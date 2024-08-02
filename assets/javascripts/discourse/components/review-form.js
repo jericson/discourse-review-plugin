@@ -17,12 +17,12 @@ export default Component.extend({
   },
 
   actions: {
-    createReview(name, email, message) {
+    createReview(name, email, review_text) {
       const reviewRecord = this.store.createRecord("review", {
         id: Date.now(),
         name,
         email,
-        message,
+        review_text,
       });
 
       reviewRecord.save().then((result) => {
