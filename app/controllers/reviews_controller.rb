@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
 Date: #{@date}
 From: #{review["email"] || "unknown@example.com"}
 To: #{SiteSetting.review_form_email}
-Subject: Review from #{review["name"] || 'Anonymous reviewer'}
+Subject: Review from #{review["name"] || "Anonymous reviewer"}
 
 
 #{review["review_text"]}"
