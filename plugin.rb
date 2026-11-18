@@ -1,4 +1,3 @@
-# coding: utf-8
 # frozen_string_literal: true
 
 # name: discourse-review-plugin
@@ -18,18 +17,14 @@ module ::Review
 end
 
 require_relative "lib/review/engine"
-require_relative File.expand_path("../lib/review/review_store.rb", __FILE__)
+require_relative "lib/review/review_store"
 
 after_initialize do
-  require_relative File.expand_path("../app/controllers/review_controller.rb", __FILE__)
-  require_relative File.expand_path("../app/controllers/reviews_controller.rb", __FILE__)
+  require_relative "app/controllers/reviews_controller"
 
   Discourse::Application.routes.append do
-    # Map the path `/review` to `ReviewController`’s `index` method
-    get "/review" => "review#index"
-
     get "/reviews" => "reviews#index"
-    put "/reviews/:review_id" => "reviews#create"
+    post "/reviews" => "reviews#create"
     delete "/reviews/:review_id" => "reviews#destroy"
   end
 end

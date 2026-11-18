@@ -2,8 +2,9 @@ discourse-review-plugin:
   review_form_enabled:
     default: false
     client: true
-  review_form_email:
-    default: "review@example.com"
+  review_form_category:
+    type: category
+    default: ""
     client: true
   review_form_intro:
     default: "Please leave a review!"

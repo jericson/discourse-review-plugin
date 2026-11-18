@@ -7,8 +7,8 @@ en:
   js:
     review:
       create_review:
-        text_name_label: 'Name'
-        text_email_label: 'Email'
-        text_review_label: 'Review'
-
+        text_name_label: "Name"
+        text_email_label: "Email"
+        text_review_label: "Review"
         submit_label: "Send"
+        thanks: "Thanks for the review!"

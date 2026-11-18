@@ -1,3 +1,8 @@
 en:
   site_settings:
     review_form_enabled: "Enable review form"
+    review_form_category: "Category where submitted reviews are posted; the form is shown at the top of this category"
+    review_form_intro: "Text shown above the review form"
+  review:
+    topic_title: "Review from %{name}"
+    anonymous: "Anonymous reviewer"
